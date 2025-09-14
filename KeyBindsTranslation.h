@@ -5,7 +5,12 @@
 #include "KeyBindHelper.h"
 
 #include <string>
+
+#if __has_include("Windows.h")
 #include <Windows.h>
+#else
+#include "WindowsSpecificTypes.h"
+#endif
 
 std::string to_string(KeyBinds::KeyControl pKeyControl, Language pLang);
 

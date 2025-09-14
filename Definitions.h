@@ -3,7 +3,12 @@
 #include "KeyBindStructs.h"
 
 #include <cstdint>
+
+#if __has_include("Windows.h")
 #include <Windows.h>
+#else
+#include "WindowsSpecificTypes.h"
+#endif
 
 enum class UserRole : uint8_t
 {
@@ -30,7 +35,7 @@ struct UserInfo
 	const char* AccountName;
 
 	// Unix timestamp when the user joined the squad (or 0 if time could not be determined)
-	__time64_t JoinTime;
+	int64_t JoinTime;
 
 	UserRole Role; // Role in squad, or ::None if the user was removed from the squad
 
@@ -58,7 +63,7 @@ struct UserInfo
 		, GroupType(ChannelType::Invalid)
 	{}
 
-	UserInfo(const char* pAccountName, __time64_t pJoinTime, UserRole pRole, uint8_t pSubgroup, bool pReadyStatus, ChannelType pType)
+	UserInfo(const char* pAccountName, int64_t pJoinTime, UserRole pRole, uint8_t pSubgroup, bool pReadyStatus, ChannelType pType)
 		: AccountName{pAccountName}
 		, JoinTime{pJoinTime}
 		, Role{pRole}
