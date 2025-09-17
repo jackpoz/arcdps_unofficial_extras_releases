@@ -16,6 +16,7 @@ target_include_directories(
     PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
         $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
+		"/usr/include/wine/wine/windows"
 )
 
 add_compile_definitions(

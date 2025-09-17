@@ -1291,7 +1291,7 @@ std::string to_string(KeyBinds::KeyCode pKeyCode, Language pLang, HKL pKeyboardL
 	{
 		UINT scanCode = KeyCodeToMsvcScanCode(pKeyCode);
 		UINT keyExW = MapVirtualKeyExW(scanCode, MAPVK_VSC_TO_VK_EX, pKeyboardLayout);
-		wchar_t shortCutRealNameWstr[32];
+		WCHAR shortCutRealNameWstr[32];
 		constexpr byte keyState[256]{};
 		int toUnicodeCount = ToUnicodeEx(keyExW, scanCode, keyState, shortCutRealNameWstr, 32, 1 << 2, pKeyboardLayout);
 		if (toUnicodeCount == 2) {

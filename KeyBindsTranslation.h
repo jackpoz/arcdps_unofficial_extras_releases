@@ -5,7 +5,7 @@
 #include "KeyBindHelper.h"
 
 #include <string>
-#include <Windows.h>
+#include <windows.h>
 
 std::string to_string(KeyBinds::KeyControl pKeyControl, Language pLang);
 
