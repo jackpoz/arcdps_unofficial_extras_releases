@@ -15,5 +15,8 @@
     "cpp11": {
       "description": "activate compatibility for C++11, will disable magic-enum"
     }
-  }
+  },
+  "dependencies": [
+    "crossplatformmocks"
+  ]
 }

@@ -1,9 +1,17 @@
 #pragma once
 
-#ifdef UNOFFICIAL_EXTRAS_EXPORTS
-#define UNOFFICIAL_EXTRAS_API __declspec(dllexport)
+#ifdef _WIN32
+	#ifdef UNOFFICIAL_EXTRAS_EXPORTS
+		#define UNOFFICIAL_EXTRAS_API __declspec(dllexport)
+	#else
+		#define UNOFFICIAL_EXTRAS_API __declspec(dllimport)
+	#endif
 #else
-#define UNOFFICIAL_EXTRAS_API __declspec(dllimport)
+	#ifdef UNOFFICIAL_EXTRAS_EXPORTS
+		#define UNOFFICIAL_EXTRAS_API __attribute__((visibility("default")))
+	#else
+		#define UNOFFICIAL_EXTRAS_API
+	#endif
 #endif
 
 #include <cstdint>
