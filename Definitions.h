@@ -2,8 +2,8 @@
 
 #include "KeyBindStructs.h"
 
+#include <CrossplatformMocks/Module.h>
 #include <cstdint>
-#include <Windows.h>
 
 enum class UserRole : uint8_t
 {
@@ -158,7 +158,7 @@ struct ExtrasAddonInfo
 
 	// The handle to the unofficial_extras module.
 	// Use this to call the exports of the DLL.
-	HMODULE ExtrasHandle = nullptr;
+	LibraryHandle ExtrasHandle = nullptr;
 };
 
 enum ChatMessageType

@@ -1,17 +1,10 @@
 #pragma once
+#include <CrossplatformMocks/Macro.h>
 
-#ifdef _WIN32
-	#ifdef UNOFFICIAL_EXTRAS_EXPORTS
-		#define UNOFFICIAL_EXTRAS_API __declspec(dllexport)
-	#else
-		#define UNOFFICIAL_EXTRAS_API __declspec(dllimport)
-	#endif
+#ifdef UNOFFICIAL_EXTRAS_EXPORTS
+#define UNOFFICIAL_EXTRAS_API CROSSPLATFORM_MOCKS_EXPORT
 #else
-	#ifdef UNOFFICIAL_EXTRAS_EXPORTS
-		#define UNOFFICIAL_EXTRAS_API __attribute__((visibility("default")))
-	#else
-		#define UNOFFICIAL_EXTRAS_API
-	#endif
+#define UNOFFICIAL_EXTRAS_API CROSSPLATFORM_MOCKS_IMPORT
 #endif
 
 #include <cstdint>

@@ -9,7 +9,7 @@
       "kind": "git",
       "repository": "https://github.com/jackpoz/Zinn-o-Matics-vcpkg-registry",
       "reference": "fork",
-      "baseline": "ff9365db1406c512857d7ce21da1cf226a6bd169",
+      "baseline": "50a7be97b5810bd2817c4595334ba7b0142f156c",
       "packages": [
         "crossplatformmocks"
       ]
