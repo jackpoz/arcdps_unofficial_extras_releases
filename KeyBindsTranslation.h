@@ -3,9 +3,9 @@
 #include "Definitions.h"
 #include "KeyBindStructs.h"
 #include "KeyBindHelper.h"
+#include <CrossplatformMocks/Keyboard.h>
 
 #include <string>
-#include <Windows.h>
 
 std::string to_string(KeyBinds::KeyControl pKeyControl, Language pLang);
 
